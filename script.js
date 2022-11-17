@@ -1,4 +1,5 @@
 let sum = 0;
+const numBtn = document.querySelectorAll(".number");
 function add(a, b) {
   return (sum = a + b);
 }
