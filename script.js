@@ -1,5 +1,6 @@
 let sum = 0;
 const numBtn = document.querySelectorAll(".number");
+
 function add(a, b) {
   return (sum = a + b);
 }
@@ -32,3 +33,9 @@ function operate(operator, a, b) {
       break;
   }
 }
+
+numBtn.forEach((button) => {
+  button.addEventListener('click', () => {
+    
+  });
+});
