@@ -38,7 +38,7 @@ function operate(operator, a, b) {
 
 numBtns.forEach((button) => {
   button.addEventListener('click', () => {
-   displayValue = +button.textContent;
    calcDisplay.textContent += +button.textContent;
+   displayValue = +calcDisplay.textContent;
   });
 });
