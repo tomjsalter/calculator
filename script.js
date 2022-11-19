@@ -1,6 +1,6 @@
 let sum = 0;
 const numBtns = document.querySelectorAll(".number");
-const calcDisplay = document.getElementById("display");
+let calcDisplay = document.getElementById("display");
 let displayValue = 0;
 
 function add(a, b) {
@@ -39,8 +39,9 @@ function operate(operator, a, b) {
 numBtns.forEach((button) => {
   button.addEventListener('click', () => {
    displayValue = +button.innerHTML;
-   let createDigit = document.createElement('p');
-   createDigit.textContent = +button.innerHTML;
-   calcDisplay.appendChild(createDigit);
+   calcDisplay.textContent = +button.innerHTML;
+  //  let createDigit = document.createElement('p');
+  //  createDigit.textContent = +button.innerHTML;
+  //  calcDisplay.appendChild(createDigit);
   });
 });
