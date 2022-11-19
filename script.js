@@ -9,19 +9,27 @@ let displayValue = 0;
 let operator;
 
 function add(num1, num2) {
-  return (sum = num1 + num2);
+  sum = num1 + num2;
+  calcDisplay = sum;
+  return sum;
 }
 
 function subtract(num1, b) {
-  return (sum = num1 - num2);
+  sum = num1 - num2;
+  calcDisplay = sum;
+  return sum;
 }
 
 function multiply(num1, num2) {
-  return (sum = num1 * num2);
+  sum = num1 * num2;
+  calcDisplay = sum;
+  return sum;
 }
 
 function divide(num1, num2) {
-  return (sum = num1 / num2);
+  sum = num1 / num2;
+  calcDisplay = sum;
+  return sum;
 }
 
 function operate(operator, num1, num2) {
@@ -41,6 +49,16 @@ function operate(operator, num1, num2) {
   }
 }
 
+function numberTwo() {
+  numButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      calcDisplay.textContent += +button.textContent;
+      displayValue = +calcDisplay.textContent;
+      return displayValue;
+    });
+  });
+}
+
 numButtons.forEach((button) => {
   button.addEventListener('click', () => {
    calcDisplay.textContent += +button.textContent;
@@ -53,9 +71,11 @@ operateButtons.forEach((button) => {
   button.addEventListener('click', () => {
     num1 = displayValue;
     operator = button.id;
+    numberTwo();
   });
 });
 
 equalsButton.addEventListener('click', () => {
-  operate(operator, num1, num2);
+  num2 = displayValue;
+  operate();
 });
