@@ -52,9 +52,8 @@ function operate(operator, num1, num2) {
 function numberTwo() {
   numButtons.forEach((button) => {
     button.addEventListener('click', () => {
-      calcDisplay.textContent += +button.textContent;
-      displayValue = +calcDisplay.textContent;
-      return displayValue;
+      num2 = +calcDisplay.textContent;
+      return num2;
     });
   });
 }
@@ -76,6 +75,5 @@ operateButtons.forEach((button) => {
 });
 
 equalsButton.addEventListener('click', () => {
-  num2 = displayValue;
   operate();
 });
