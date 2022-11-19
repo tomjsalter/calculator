@@ -38,10 +38,7 @@ function operate(operator, a, b) {
 
 numBtns.forEach((button) => {
   button.addEventListener('click', () => {
-   displayValue = +button.innerHTML;
-   calcDisplay.textContent = +button.innerHTML;
-  //  let createDigit = document.createElement('p');
-  //  createDigit.textContent = +button.innerHTML;
-  //  calcDisplay.appendChild(createDigit);
+   displayValue = +button.textContent;
+   calcDisplay.textContent += +button.textContent;
   });
 });
