@@ -1,37 +1,38 @@
-let sum = 0;
 const numBtns = document.querySelectorAll(".number");
+const operateBtns = document.querySelectorAll(".operator");
 let calcDisplay = document.getElementById("display");
+let sum = 0;
 let displayValue = 0;
 
-function add(a, b) {
-  return (sum = a + b);
+function add(num1, num2) {
+  return (sum = num1 + num2);
 }
 
-function subtract(a, b) {
-  return (sum = a - b);
+function subtract(num1, b) {
+  return (sum = num1 - num2);
 }
 
-function multiply(a, b) {
-  return (sum = a * b);
+function multiply(num1, num2) {
+  return (sum = num1 * num2);
 }
 
-function divide(a, b) {
-  return (sum = a / b);
+function divide(num1, num2) {
+  return (sum = num1 / num2);
 }
 
-function operate(operator, a, b) {
+function operate(operator, num1, num2) {
   switch (operator) {
     case operator === "add":
-      add(a, b);
+      add(num1, num2);
       break;
     case operator === "subtract":
-      subtract(a, b);
+      subtract(num1, num2);
       break;
     case operator === "multiply":
-      multiply(a, b);
+      multiply(num1, num2);
       break;
     case operator === "divide":
-      divide(a, b);
+      divide(num1, num2);
       break;
   }
 }
@@ -40,5 +41,11 @@ numBtns.forEach((button) => {
   button.addEventListener('click', () => {
    calcDisplay.textContent += +button.textContent;
    displayValue = +calcDisplay.textContent;
+  });
+});
+
+operateBtns.forEach((button) => {
+  button.addEventListener('click', () => {
+    
   });
 });
