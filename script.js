@@ -4,7 +4,7 @@ const equalsButton = document.getElementById("equals");
 let calcDisplay = document.getElementById("display");
 let sum = 0;
 let num1 = 0;
-let num2 = 0;
+let num2;
 let displayValue = 0;
 let operator;
 
@@ -51,7 +51,10 @@ function operate(operator, num1, num2) {
 
 function numberTwo() {
   numButtons.forEach((button) => {
-    button.addEventListener('click', () => {
+    if (num2 !== undefined) {
+      calcDisplay.removeChild.textContent;
+    } 
+    button.addEventListener("click", () => {
       num2 = +calcDisplay.textContent;
       return num2;
     });
@@ -59,21 +62,21 @@ function numberTwo() {
 }
 
 numButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-   calcDisplay.textContent += +button.textContent;
-   displayValue = +calcDisplay.textContent;
-   return displayValue;
+  button.addEventListener("click", () => {
+    calcDisplay.textContent += +button.textContent;
+    displayValue = +calcDisplay.textContent;
+    return displayValue;
   });
 });
 
 operateButtons.forEach((button) => {
-  button.addEventListener('click', () => {
+  button.addEventListener("click", () => {
     num1 = displayValue;
     operator = button.id;
     numberTwo();
   });
 });
 
-equalsButton.addEventListener('click', () => {
+equalsButton.addEventListener("click", () => {
   operate();
 });
