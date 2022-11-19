@@ -51,9 +51,6 @@ function operate(operator, num1, num2) {
 
 function numberTwo() {
   numButtons.forEach((button) => {
-    if (num2 !== undefined) {
-      calcDisplay.removeChild.textContent;
-    } 
     button.addEventListener("click", () => {
       num2 = +calcDisplay.textContent;
       return num2;
