@@ -28,7 +28,7 @@ function divide(num1, num2) {
   return sum;
 }
 
-function operate(operator, num1, num2) {
+function getSum(operator, num1, num2) {
   switch (operator) {
     case 'add':
       return add(num1, num2)
@@ -44,3 +44,18 @@ function operate(operator, num1, num2) {
       break;
   }
 }
+
+function populateDisplay(button) {
+  // if resetDisplay child equals true, remove and append number1Display div
+  // if number1Display div equals true and operator not pressed, continue assigning numbers to number1Display div
+  // if number1Display div equals true and operator equals true, store number1Div value, remove child and append number2Display div
+  let buttonValue = button.id;
+  buttonValue = +button.textContent;
+  calcuatorDisplay.textContent += buttonValue;
+}
+
+numberButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    populateDisplay(button);
+  });
+});
