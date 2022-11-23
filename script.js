@@ -70,10 +70,11 @@ function populateDisplay(button) {
     calcuatorDisplay.removeChild(number1Display);
     calcuatorDisplay.appendChild(number2Display);
     getButtonValue(button);
-  } else {
+  } else if (document.contains(number2Display) === true && operator !== undefined) {
     getButtonValue(button);
-  }
+  } 
 }
+// if operator has been pressed, number2 is now being logged
 
 // if user clicks result button, set number 1 and 2 variables to 0 and operator to undefined
 // if user clicks operator after inputting number 2 (before pressing result), return result but move result into number1 and make number2 ready for next number. reset sum
