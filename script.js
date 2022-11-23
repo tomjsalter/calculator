@@ -55,13 +55,13 @@ function populateDisplay(button) {
   if (document.contains(resetDisplay) === true) {
     calcuatorDisplay.removeChild(resetDisplay);
     calcuatorDisplay.appendChild(number1Display);
+  } else if (document.contains(number1Display) === true && operator !== undefined) {
+    // if number1Display div equals true and operator equals true, store number1Div value, remove child and append number2Display div
+  } else {
+      let buttonValue = button.id;
+      buttonValue = +button.textContent;
+      calcuatorDisplay.textContent += buttonValue;
   }
-  // if resetDisplay child equals true, remove and append number1Display div
-  // if number1Display div equals true and operator not pressed, continue assigning numbers to number1Display div
-  // if number1Display div equals true and operator equals true, store number1Div value, remove child and append number2Display div
-  let buttonValue = button.id;
-  buttonValue = +button.textContent;
-  calcuatorDisplay.textContent += buttonValue;
 }
 
 // if user clicks result button, set number 1 and 2 variables to 0 and operator to undefined
