@@ -3,10 +3,16 @@ const operatorButtons = document.querySelectorAll('.operator');
 const resetButton = document.getElementById('reset');
 const equalsButton = document.getElementById('equals');
 const calcuatorDisplay = document.getElementById('display');
+const resetDisplay = document.createElement('div');
+const number1Display = document.createElement('div');
+const number2Display = document.createElement('div');
 let sum = 0;
 let num1 = 0;
 let num2 = 0;
 let operator = undefined;
+
+resetDisplay.textContent = 0;
+calcuatorDisplay.appendChild(resetDisplay);
 
 function add(num1, num2) {
   sum = num1 + num2;
@@ -46,6 +52,10 @@ function getSum(operator, num1, num2) {
 }
 
 function populateDisplay(button) {
+  if (document.contains(resetDisplay) === true) {
+    calcuatorDisplay.removeChild(resetDisplay);
+    calcuatorDisplay.appendChild(number1Display);
+  }
   // if resetDisplay child equals true, remove and append number1Display div
   // if number1Display div equals true and operator not pressed, continue assigning numbers to number1Display div
   // if number1Display div equals true and operator equals true, store number1Div value, remove child and append number2Display div
@@ -53,6 +63,9 @@ function populateDisplay(button) {
   buttonValue = +button.textContent;
   calcuatorDisplay.textContent += buttonValue;
 }
+
+// if user clicks result button, set number 1 and 2 variables to 0 and operator to undefined
+// if user clicks operator after inputting number 2 (before pressing result), return result but move result into number1 and make number2 ready for next number. reset sum
 
 numberButtons.forEach((button) => {
   button.addEventListener('click', () => {
