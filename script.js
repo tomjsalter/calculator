@@ -66,9 +66,12 @@ function populateDisplay(button) {
     calcuatorDisplay.appendChild(number1Display);
     getButtonValue(button);
   } else if (document.contains(number1Display) === true && operator !== undefined) {
-    // if number1Display div equals true and operator equals true, store number1Div value, remove child and append number2Display div
+    num1 = displayValue;
+    calcuatorDisplay.removeChild(number1Display);
+    calcuatorDisplay.appendChild(number2Display);
+    getButtonValue(button);
   } else {
-      getButtonValue(button);
+    getButtonValue(button);
   }
 }
 
