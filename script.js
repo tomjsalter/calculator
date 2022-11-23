@@ -10,6 +10,7 @@ let sum = 0;
 let num1 = 0;
 let num2 = 0;
 let operator = undefined;
+let displayValue = 0;
 
 resetDisplay.textContent = 0;
 calcuatorDisplay.appendChild(resetDisplay);
@@ -51,16 +52,23 @@ function getSum(operator, num1, num2) {
   }
 }
 
+function getButtonValue(button) {
+  let buttonValue = button.id;
+  buttonValue = +button.textContent;
+  calcuatorDisplay.textContent += buttonValue;
+  displayValue = +calcuatorDisplay.textContent;
+  return displayValue;
+}
+
 function populateDisplay(button) {
   if (document.contains(resetDisplay) === true) {
     calcuatorDisplay.removeChild(resetDisplay);
     calcuatorDisplay.appendChild(number1Display);
+    getButtonValue(button);
   } else if (document.contains(number1Display) === true && operator !== undefined) {
     // if number1Display div equals true and operator equals true, store number1Div value, remove child and append number2Display div
   } else {
-      let buttonValue = button.id;
-      buttonValue = +button.textContent;
-      calcuatorDisplay.textContent += buttonValue;
+      getButtonValue(button);
   }
 }
 
