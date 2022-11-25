@@ -81,6 +81,3 @@ numberButtons.forEach((button) => {
     populateDisplay(button);
   });
 });
-
-// if user clicks result button, set number 1 and 2 variables to 0 and operator to undefined
-// if user clicks operator after inputting number 2 (before pressing result), return result but move result into number1 and make number2 ready for next number. reset sum
