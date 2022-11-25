@@ -37,7 +37,7 @@ function divide(num1, num2) {
 
 function getSum(operator, num1, num2) {
   switch (operator) {
-    case 'add':
+    case 'addition':
       return add(num1, num2)
       break;
     case 'subtract':
