@@ -52,29 +52,31 @@ function getSum(operator, num1, num2) {
   }
 }
 
-function getButtonValue(button) {
-  let buttonValue = button.id;
-  buttonValue = +button.textContent;
-  calcuatorDisplay.textContent += buttonValue;
-  displayValue = +calcuatorDisplay.textContent;
-  return displayValue;
-}
 
 function populateDisplay(button) {
+  let buttonValue = button.id;
+  buttonValue = +button.textContent;
   if (document.contains(resetDisplay) === true) {
     calcuatorDisplay.removeChild(resetDisplay);
     calcuatorDisplay.appendChild(number1Display);
-        // getButtonValue(button);
+    number1Display.textContent += buttonValue;
+    displayValue = +number1Display.textContent;
+    return displayValue;
   } else if (document.contains(number1Display) === true && operator === undefined){
-    // getButtonValue(button);
+    number1Display.textContent += buttonValue;
+    displayValue = +number1Display.textContent;
+    return displayValue;
   } else if (document.contains(number1Display) === true && operator !== undefined) {
     calcuatorDisplay.removeChild(number1Display);
     calcuatorDisplay.appendChild(number2Display);
-    // getButtonValue(button);
+    number2Display.textContent += buttonValue;
+    displayValue = +number2Display.textContent;
+    return displayValue;
   } else if (document.contains(number2Display) === true && operator !== undefined) {
-    // getButtonValue(button);
+    number2Display.textContent += buttonValue;
+    displayValue = +number2Display.textContent;
+    return displayValue;
   } 
-      getButtonValue(button);
 }
 
 numberButtons.forEach((button) => {
