@@ -64,16 +64,17 @@ function populateDisplay(button) {
   if (document.contains(resetDisplay) === true) {
     calcuatorDisplay.removeChild(resetDisplay);
     calcuatorDisplay.appendChild(number1Display);
-    getButtonValue(button);
+        // getButtonValue(button);
   } else if (document.contains(number1Display) === true && operator === undefined){
-    getButtonValue(button);
+    // getButtonValue(button);
   } else if (document.contains(number1Display) === true && operator !== undefined) {
     calcuatorDisplay.removeChild(number1Display);
     calcuatorDisplay.appendChild(number2Display);
-    getButtonValue(button);
+    // getButtonValue(button);
   } else if (document.contains(number2Display) === true && operator !== undefined) {
-    getButtonValue(button);
+    // getButtonValue(button);
   } 
+      getButtonValue(button);
 }
 
 numberButtons.forEach((button) => {
