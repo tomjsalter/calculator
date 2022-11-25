@@ -65,8 +65,9 @@ function populateDisplay(button) {
     calcuatorDisplay.removeChild(resetDisplay);
     calcuatorDisplay.appendChild(number1Display);
     getButtonValue(button);
+  } else if (document.contains(number1Display) === true && operator === undefined){
+    getButtonValue(button);
   } else if (document.contains(number1Display) === true && operator !== undefined) {
-    num1 = displayValue;
     calcuatorDisplay.removeChild(number1Display);
     calcuatorDisplay.appendChild(number2Display);
     getButtonValue(button);
@@ -74,13 +75,12 @@ function populateDisplay(button) {
     getButtonValue(button);
   } 
 }
-// if operator has been pressed, number2 is now being logged
-
-// if user clicks result button, set number 1 and 2 variables to 0 and operator to undefined
-// if user clicks operator after inputting number 2 (before pressing result), return result but move result into number1 and make number2 ready for next number. reset sum
 
 numberButtons.forEach((button) => {
   button.addEventListener('click', () => {
     populateDisplay(button);
   });
 });
+
+// if user clicks result button, set number 1 and 2 variables to 0 and operator to undefined
+// if user clicks operator after inputting number 2 (before pressing result), return result but move result into number1 and make number2 ready for next number. reset sum
