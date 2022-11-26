@@ -113,5 +113,5 @@ equalsButton.addEventListener('click', () => {
 });
 
 resetButton.addEventListener('click', () => {
-
+  location.reload();
 });
