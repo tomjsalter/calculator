@@ -91,3 +91,8 @@ operatorButtons.forEach((button) => {
     operator = button.id;
   });
 });
+
+equalsButton.addEventListener('click', () => {
+  num2 = displayValue;
+  getSum(operator, num1, num2);
+});
