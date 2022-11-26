@@ -22,6 +22,7 @@ function add(num1, num2) {
   calcuatorDisplay.appendChild(resultDisplay);
   resultDisplay.textContent = sum;
   displayValue = sum;
+  operator = undefined;
 }
 
 function subtract(num1, num2) {
@@ -30,6 +31,7 @@ function subtract(num1, num2) {
   calcuatorDisplay.appendChild(resultDisplay);
   resultDisplay.textContent = sum;
   displayValue = sum;
+  operator = undefined;
 }
 
 function multiply(num1, num2) {
@@ -38,6 +40,7 @@ function multiply(num1, num2) {
   calcuatorDisplay.appendChild(resultDisplay);
   resultDisplay.textContent = sum;
   displayValue = sum;
+  operator = undefined;
 }
 
 function divide(num1, num2) {
@@ -46,6 +49,7 @@ function divide(num1, num2) {
   calcuatorDisplay.appendChild(resultDisplay);
   resultDisplay.textContent = sum;
   displayValue = sum;
+  operator = undefined;
 }
 
 function operation(operator, num1, num2) {
@@ -102,6 +106,13 @@ operatorButtons.forEach((button) => {
   button.addEventListener('click', () => {
     num1 = displayValue;
     operator = button.id;
+    if (document.contains(resultDisplay) === true) {
+      calcuatorDisplay.removeChild(resultDisplay);
+      calcuatorDisplay.appendChild(number1Display);
+      number1Display.textContent = sum;
+      num2 = 0;
+      number2Display.textContent = num2;
+    }
   });
 });
 
