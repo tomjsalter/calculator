@@ -18,33 +18,25 @@ calcuatorDisplay.appendChild(resetDisplay);
 
 function add(num1, num2) {
   sum = num1 + num2;
-  calcuatorDisplay.removeChild(number2Display);
-  calcuatorDisplay.appendChild(resultDisplay);
-  resultDisplay.textContent = sum;
-  displayValue = sum;
-  operator = undefined;
+  displayResult();
 }
 
 function subtract(num1, num2) {
   sum = num1 - num2;
-  calcuatorDisplay.removeChild(number2Display);
-  calcuatorDisplay.appendChild(resultDisplay);
-  resultDisplay.textContent = sum;
-  displayValue = sum;
-  operator = undefined;
+  displayResult();
 }
 
 function multiply(num1, num2) {
   sum = num1 * num2;
-  calcuatorDisplay.removeChild(number2Display);
-  calcuatorDisplay.appendChild(resultDisplay);
-  resultDisplay.textContent = sum;
-  displayValue = sum;
-  operator = undefined;
+  displayResult();
 }
 
 function divide(num1, num2) {
   sum = num1 / num2;
+  displayResult();
+}
+
+function displayResult() {
   calcuatorDisplay.removeChild(number2Display);
   calcuatorDisplay.appendChild(resultDisplay);
   resultDisplay.textContent = sum;
@@ -68,7 +60,6 @@ function operation(operator, num1, num2) {
       break;
   }
 }
-
 
 function populateDisplay(button) {
   let buttonValue = button.id;
