@@ -84,3 +84,10 @@ numberButtons.forEach((button) => {
     populateDisplay(button);
   });
 });
+
+operatorButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    num1 = displayValue;
+    operator = button.id;
+  });
+});
