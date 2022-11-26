@@ -6,6 +6,7 @@ const calcuatorDisplay = document.getElementById('display');
 const resetDisplay = document.createElement('div');
 const number1Display = document.createElement('div');
 const number2Display = document.createElement('div');
+const resultDisplay = document.createElement('div');
 let sum = 0;
 let num1 = 0;
 let num2 = 0;
@@ -17,25 +18,37 @@ calcuatorDisplay.appendChild(resetDisplay);
 
 function add(num1, num2) {
   sum = num1 + num2;
-  return sum;
+  calcuatorDisplay.removeChild(number2Display);
+  calcuatorDisplay.appendChild(resultDisplay);
+  resultDisplay.textContent = sum;
+  displayValue = sum;
 }
 
 function subtract(num1, num2) {
   sum = num1 - num2;
-  return sum;
+  calcuatorDisplay.removeChild(number2Display);
+  calcuatorDisplay.appendChild(resultDisplay);
+  resultDisplay.textContent = sum;
+  displayValue = sum;
 }
 
 function multiply(num1, num2) {
   sum = num1 * num2;
-  return sum;
+  calcuatorDisplay.removeChild(number2Display);
+  calcuatorDisplay.appendChild(resultDisplay);
+  resultDisplay.textContent = sum;
+  displayValue = sum;
 }
 
 function divide(num1, num2) {
   sum = num1 / num2;
-  return sum;
+  calcuatorDisplay.removeChild(number2Display);
+  calcuatorDisplay.appendChild(resultDisplay);
+  resultDisplay.textContent = sum;
+  displayValue = sum;
 }
 
-function getSum(operator, num1, num2) {
+function operation(operator, num1, num2) {
   switch (operator) {
     case 'addition':
       return add(num1, num2)
@@ -94,5 +107,9 @@ operatorButtons.forEach((button) => {
 
 equalsButton.addEventListener('click', () => {
   num2 = displayValue;
-  getSum(operator, num1, num2);
+  operation(operator, num1, num2);
+});
+
+resetButton.addEventListener('click', () => {
+
 });
