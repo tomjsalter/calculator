@@ -94,16 +94,16 @@ numberButtons.forEach((button) => {
 });
 
 operatorButtons.forEach((button) => {
-  button.addEventListener('click', () => {
+  button.addEventListener("click", () => {
     num1 = displayValue;
-    operator = button.id;
+      operator = button.id;
     if (document.contains(resultDisplay) === true) {
       calcuatorDisplay.removeChild(resultDisplay);
       calcuatorDisplay.appendChild(number1Display);
       number1Display.textContent = sum;
       num2 = null;
       number2Display.textContent = num2;
-    }
+    } 
   });
 });
 
