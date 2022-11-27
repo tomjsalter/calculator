@@ -101,7 +101,7 @@ operatorButtons.forEach((button) => {
       calcuatorDisplay.removeChild(resultDisplay);
       calcuatorDisplay.appendChild(number1Display);
       number1Display.textContent = sum;
-      num2 = 0;
+      num2 = null;
       number2Display.textContent = num2;
     }
   });
