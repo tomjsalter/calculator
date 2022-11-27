@@ -8,8 +8,8 @@ const number1Display = document.createElement('div');
 const number2Display = document.createElement('div');
 const resultDisplay = document.createElement('div');
 let sum = 0;
-let num1 = 0;
-let num2 = 0;
+let num1 = null;
+let num2 = null;
 let operator = undefined;
 let displayValue = 0;
 
