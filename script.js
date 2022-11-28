@@ -98,20 +98,18 @@ operatorButtons.forEach((button) => {
     if (operator !== undefined) {
       num2 = displayValue;
       operation(operator, num1, num2);
-    } else {
-      num1 = displayValue;
-        operator = button.id;
-      if (document.contains(resultDisplay) === true) {
-        calcuatorDisplay.removeChild(resultDisplay);
-        calcuatorDisplay.appendChild(number1Display);
-        number1Display.textContent = sum;
-        num2 = null;
-        number2Display.textContent = num2;
-      } 
+    }
+    num1 = displayValue;
+    operator = button.id;
+    if (document.contains(resultDisplay) === true) {
+      calcuatorDisplay.removeChild(resultDisplay);
+      calcuatorDisplay.appendChild(number1Display);
+      number1Display.textContent = sum;
+      num2 = null;
+      number2Display.textContent = num2;
     }
   });
 });
-
 
 equalsButton.addEventListener('click', () => {
   num2 = displayValue;
