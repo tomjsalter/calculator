@@ -7,6 +7,7 @@ const resetDisplay = document.createElement("div");
 const number1Display = document.createElement("div");
 const number2Display = document.createElement("div");
 const resultDisplay = document.createElement("div");
+const decimalButton = document.getElementById("decimal");
 let sum = 0;
 let num1 = null;
 let num2 = null;
@@ -130,4 +131,17 @@ equalsButton.addEventListener("click", () => {
 
 resetButton.addEventListener("click", () => {
   location.reload();
+});
+
+decimalButton.addEventListener("click", () => {
+  let decimalValue = decimalButton.textContent;
+  if (document.contains(number1Display) === true) {
+      number1Display.textContent += decimalValue;
+      displayValue = +number1Display.textContent;
+      return displayValue;
+  } else if (document.contains(number2Display) === true) {
+      number2Display.textContent += decimalValue;
+      displayValue = +number2Display.textContent;
+      return displayValue;
+  }
 });
