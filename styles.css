@@ -13,8 +13,8 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr);
-    column-gap: 10px;
-    row-gap: 10px;
+    column-gap: 16px;
+    row-gap: 16px;
 }
 
 button {
@@ -25,10 +25,19 @@ button {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     background-color: rgba(211, 211, 211, 0.223);
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgba(211, 211, 211, 0.381);
 }
 
 .operator {
     background-color: rgba(211, 211, 211, 0.738);
+}
+
+.operator:hover {
+    background-color: rgba(211, 211, 211, 0.849);
 }
 
 #equals {
@@ -36,6 +45,10 @@ button {
     grid-column-end: 5;
     background-color: mediumslateblue;
     color: white;
+}
+
+#equals:hover {
+    background-color: slateblue;
 }
 
 #reset {
