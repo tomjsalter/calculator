@@ -37,7 +37,7 @@ function divide(num1, num2) {
 }
 
 function displayResult() {
-  sum = sum.toFixed(2);
+  sum = +sum.toFixed(2);
   calcuatorDisplay.removeChild(number2Display);
   calcuatorDisplay.appendChild(resultDisplay);
   resultDisplay.textContent = sum;
@@ -122,8 +122,10 @@ operatorButtons.forEach((button) => {
 });
 
 equalsButton.addEventListener("click", () => {
-  num2 = displayValue;
-  operation(operator, num1, num2);
+  if (number2Display.textContent.length !== 0) {
+    num2 = displayValue;
+    operation(operator, num1, num2);
+  }
 });
 
 resetButton.addEventListener("click", () => {
