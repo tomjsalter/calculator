@@ -4,10 +4,40 @@
     padding: 0;
 }
 
+body {
+    max-width: 400px;
+    margin: auto;
+}
+
 #button-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr);
-    column-gap: 8px;
-    row-gap: 8px;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+button {
+    border: none;
+    border-radius: 8px;
+    padding: 18px;
+    font-size: 28px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    background-color: rgba(211, 211, 211, 0.223);
+}
+
+.operator {
+    background-color: rgba(211, 211, 211, 0.738);
+}
+
+#equals {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    background-color: mediumslateblue;
+    color: white;
+}
+
+#reset {
+    color: mediumslateblue;
 }
